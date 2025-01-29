@@ -1,0 +1,137 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f4f4f9;
+}
+
+h1 {
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Game Container */
+#game-container {
+  margin: 20px auto;
+  width: fit-content;
+}
+
+/* Difficulty Selector */
+#difficulty-selector {
+  margin-bottom: 10px;
+}
+
+#difficulty-selector button {
+  margin: 0 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: green;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#difficulty-selector button:hover {
+  background-color: #e0e0e0;
+  border-color: #bbb;
+}
+
+/* Start Game Button */
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #005a9e;
+}
+
+/* Game Timer */
+#game-timer {
+  margin: 15px 0;
+  font-size: 18px;
+  color: #444;
+}
+
+/* Game Board */
+#game-board table {
+  width: auto; /* Allow the table to expand dynamically */
+  margin: 0 auto;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#game-board td {
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  border: 1px solid black;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #4c555c;
+}
+
+#game-board td:hover {
+  background-color: #616d59; /* Optional: Highlight on hover */
+}
+
+.mine-img {
+  width: 100%; /* Ensures the image scales within the cell */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Prevents extra spacing below the image */
+}
+
+#restartButton {
+  font-size: 40px; /* Increase emoji size */
+  background-color: transparent; /* Remove background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Make it clickable */
+}
+
+.revealed {
+  background-color: white;
+  border: 1px solid #bbb; /* Slightly darker border for contrast */
+}
+
+#lives {
+  font-size: 45px;
+  color: red;
+}
+
+#game-board td.revealed {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+#game-board td.revealed[data-value="1"] {
+  color: blue;
+}
+#game-board td.revealed[data-value="2"] {
+  color: green;
+}
+#game-board td.revealed[data-value="3"] {
+  color: red;
+}
+#game-board td.revealed[data-value="4"] {
+  color: darkblue;
+}
+#game-board td.revealed[data-value="5"] {
+  color: brown;
+}
+#game-board td.revealed[data-value="6"] {
+  color: teal;
+}
+#game-board td.revealed[data-value="7"] {
+  color: black;
+}
+#game-board td.revealed[data-value="8"] {
+  color: gray;
+}
