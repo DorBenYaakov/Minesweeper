@@ -60,8 +60,9 @@ button:hover {
   margin: 15px 0;
   font-size: 18px;
   color: #444;
+  font-weight: bold;
+  font-family: "Cursive", sans-serif;
 }
-
 /* Game Board */
 #game-board table {
   width: auto; /* Allow the table to expand dynamically */
@@ -111,7 +112,7 @@ button:hover {
   font-weight: bold;
 }
 
-#game-board td.revealed[data-value="1"] {
+/* #game-board td.revealed[data-value="1"] {
   color: blue;
 }
 #game-board td.revealed[data-value="2"] {
@@ -134,4 +135,4 @@ button:hover {
 }
 #game-board td.revealed[data-value="8"] {
   color: gray;
-}
+} */

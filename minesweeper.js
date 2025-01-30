@@ -41,7 +41,6 @@ function onInit() {
   clearInterval(gTimerInterval);
   gGame.secsPassed = 0;
   document.querySelector("#game-timer").innerText = `Time elapsed: 0`;
-  gTimerInterval = setInterval(updateTimer, 1000);
 }
 
 // Checks if any cell has been revealed
@@ -156,6 +155,7 @@ function setDifficulty(levelIndex) {
 // Handles left-click on a cell
 function onCellClicked(elCell, i, j) {
   if (gGame.isFirstClick) {
+    gTimerInterval = setInterval(updateTimer, 1000);
     setMines(gBoard, i, j);
     setMinesNegsCount(gBoard);
     gGame.isFirstClick = false;
@@ -307,6 +307,7 @@ function isVictory() {
     // console.log("Game won!");
     gGame.isOn = false; // Stop further game actions
     updateRestartButton(true); // Update button here directly
+    clearInterval(gTimerInterval);
     return true;
   }
 

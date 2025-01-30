@@ -37,31 +37,31 @@ function countNegs(board, rowIdx, colIdx) {
 }
 
 function getNeighbors(board, rowIdx, colIdx) {
-  console.log(`Finding neighbors for cell (${rowIdx}, ${colIdx})`);
+  // console.log(`Finding neighbors for cell (${rowIdx}, ${colIdx})`);
 
   const neighbors = [];
   for (let i = rowIdx - 1; i <= rowIdx + 1; i++) {
     if (i < 0 || i >= board.length) {
-      console.log(`Skipping row ${i} (out of bounds)`);
+      // console.log(`Skipping row ${i} (out of bounds)`);
       continue;
     }
 
     for (let j = colIdx - 1; j <= colIdx + 1; j++) {
       if (j < 0 || j >= board[0].length) {
-        console.log(`Skipping column ${j} (out of bounds)`);
+        // console.log(`Skipping column ${j} (out of bounds)`);
         continue;
       }
 
       if (i === rowIdx && j === colIdx) {
-        console.log(`Skipping cell (${i}, ${j}) (same as input cell)`);
+        // console.log(`Skipping cell (${i}, ${j}) (same as input cell)`);
         continue;
       }
 
-      console.log(`Adding neighbor cell (${i}, ${j})`);
+      // console.log(`Adding neighbor cell (${i}, ${j})`);
       neighbors.push({ i, j });
     }
   }
 
-  console.log("Neighbors found:", neighbors);
+  // console.log("Neighbors found:", neighbors);
   return neighbors;
 }
