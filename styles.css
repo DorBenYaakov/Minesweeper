@@ -97,7 +97,7 @@ button:hover {
 }
 
 .revealed {
-  background-color: white;
+  background-color: #4c555c;
   border: 1px solid #bbb; /* Slightly darker border for contrast */
 }
 
