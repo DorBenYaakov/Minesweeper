@@ -88,6 +88,7 @@ button:hover {
   width: 100%; /* Ensures the image scales within the cell */
   height: auto; /* Maintains aspect ratio */
   display: block; /* Prevents extra spacing below the image */
+  background: #973136;
 }
 
 #restartButton {
@@ -95,11 +96,6 @@ button:hover {
   background-color: transparent; /* Remove background */
   border: none; /* Remove border */
   cursor: pointer; /* Make it clickable */
-}
-
-.revealed {
-  background-color: #4c555c;
-  border: 1px solid #bbb; /* Slightly darker border for contrast */
 }
 
 #lives {
@@ -110,6 +106,7 @@ button:hover {
 #game-board td.revealed {
   font-size: 22px;
   font-weight: bold;
+  background-color: #aab0b4;
 }
 
 /* #game-board td.revealed[data-value="1"] {

@@ -165,12 +165,10 @@ function onCellClicked(elCell, i, j) {
   if (!gGame.isOn || gBoard[i][j].isMarked || gBoard[i][j].isShown) return;
 
   if (gBoard[i][j].isMine) {
+    // Handle when a mine is clicked
     gBoard[i][j].isShown = true;
-    gGame.shownCount++; // Increment shown count for mine
-    // console.log(`Mine clicked at cell [${i}, ${j}]. Shown count: ${gGame.shownCount}`);
-
-    elCell.insertAdjacentHTML("beforeend", MINE);
-    elCell.classList.add("revealed");
+    gGame.shownCount++;
+    elCell.innerHTML = MINE;
 
     // Flash the mine and hide it again if there are remaining lives
     setTimeout(() => {
@@ -178,7 +176,7 @@ function onCellClicked(elCell, i, j) {
         elCell.classList.remove("revealed");
         elCell.innerHTML = "";
         gBoard[i][j].isShown = false;
-        gGame.shownCount--; // Decrement shown count if hidden again
+        gGame.shownCount--;
         // console.log(`Mine at cell [${i}, ${j}] hidden again. Shown count: ${gGame.shownCount}`);
       }
     }, 600);
@@ -189,18 +187,21 @@ function onCellClicked(elCell, i, j) {
 
     if (lives === 0) gameOver();
   } else {
+    // Handle non-mine cell click
     if (!gBoard[i][j].isShown) {
       gBoard[i][j].isShown = true;
-      gGame.shownCount++; // Increment shown count for non-mine
+      gGame.shownCount++;
+      elCell.classList.add("revealed"); // Add the revealed class to the clicked cell
 
       if (gBoard[i][j].minesAroundCount > 0) {
+        // Display neighbor count if greater than 0
         elCell.innerHTML = gBoard[i][j].minesAroundCount;
-        elCell.classList.add("revealed");
       } else {
+        // Expand surrounding cells if it's a zero-cell
         expandShown(gBoard, i, j);
       }
 
-      // Check for victory condition after cell is revealed and processed
+      // Check for victory after revealing the cell
       isVictory();
     }
   }
@@ -284,6 +285,8 @@ function updateNegs(board, rowIdx, colIdx) {
       if (currCell.isShown) continue;
 
       currCell.isShown = true;
+      var currCellEl = document.getElementById(`cell-${i}-${j}`);
+      currCellEl.classList.add("revealed");
       gGame.shownCount++;
       // console.log("Neighbor cell shown. shownCount:", gGame.shownCount);
 
